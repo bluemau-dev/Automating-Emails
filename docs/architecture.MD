@@ -19,3 +19,18 @@ Notes:
 
 Connecting to Domain Name: 
 Depending on what you use, 
+
+# ScheduleEmail.py
+
+* Time-Module:
+- time.time() method returns the seconds since the epoch time as a floating-point number.
+- time.gmtime(x) method returns a tuple of epoch time. The parameter 'x' can be 0, which returns the starting point of time: 'time.struct_time(tm_year=1970, tm_mon=1, tm_mday=1, tm_hour=0, tm_min=1, tm_sec=40, tm_wday=3, tm_yday=1, tm_isdst=0)'
+or can be the current time by setting 'x' as the seconds since the epoch time.
+
+//EXAMPLE CODE//
+x = time.time() //x = 1767751391.924533
+print(time.gmtime(x)) //PRINTS: time.struct_time(tm_year=2026, tm_mon=1, tm_mday=7, tm_hour=2, tm_min=3, tm_sec=11, tm_wday=2, tm_yday=7, tm_isdst=0)
+
+Notes:
+- What is Epoch? It is the point where time starts and is platform-dependant(meaning only works on Operating Systems like Windows, MacOS, or Linux). The starting point of time is January 1, 1970, 00:00:00 UTC, acting as a universtal time standard.
+- Greenwich Mean Time (GMW) is the point of reference for that global time. 
