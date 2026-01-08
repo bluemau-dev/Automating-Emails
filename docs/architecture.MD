@@ -22,6 +22,10 @@ Depending on what you use,
 
 # ScheduleEmail.py
 
+* Importing time module
+- Remember, modules are source of code that have: functions, methods, classes, objects, constants and variables. So when we import the time module into our script, we reference the name of the module 'time' to perfort a specific task. 
+- We can name new variables like for example 't' to equal 'time' module. What this does is point 't' to reference 'time' from the memory. So things like time.time() can be t.time() instead. This is called a BINDING. We bind the new variable we want to create to the object. And for our case it is a module object called time. Man how many times am I going to say time haha. 
+
 * Time-Module:
 - time.time() method returns the seconds since the epoch time as a floating-point number.
 - time.gmtime(x) method returns a tuple of epoch time. The parameter 'x' can be 0, which returns the starting point of time: 'time.struct_time(tm_year=1970, tm_mon=1, tm_mday=1, tm_hour=0, tm_min=1, tm_sec=40, tm_wday=3, tm_yday=1, tm_isdst=0)'
