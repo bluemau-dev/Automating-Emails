@@ -1,0 +1,17 @@
+# Label Used to Name Workflow
+name: Daily Automate Email
+
+# Trigger Level
+on:
+  schedule: # Min, Hour, Day, Month, Weekday
+    - cron: "30 6 * * *" #6:30 AM Everyday
+  workflow_dispatch:
+
+jobs:
+  send-email: # This is the job
+    runs-on: ubuntu-latest # This is the VM (virtual machine)
+
+    steps: # The steps required to complete task
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v4
+      - run: python email_sender.py

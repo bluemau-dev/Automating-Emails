@@ -46,3 +46,7 @@ or if you need to convert your configuration file to a different one, pretty coo
       - name: Julius Erving
         number: 6
     
+# CI/CD Pipelines
+Continous Integration + Continuous Deployment...
+Automated testing allows dependencies and other issues to be identified
+earlier in software development lifecycle, saving time later. 

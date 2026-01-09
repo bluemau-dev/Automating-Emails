@@ -2,6 +2,10 @@
 
 # Automation / Email.py
 
+* Importing the OS module
+- This module provides a portable way of using operating system dependent functionality.
+- GitHub has a feature to have: Secrets and variables allow you to manage reusable configuration data. Secrets are encrypted and are used for sensitive data. 
+
 Sending Email using SMPT Library
 1. Connect to SMTP Server: 'smtplib.SMPT('DOMAIN NAME', PORT #)'
 2. Establish connection to SMTP Server: 'OBJECT.ehlo()'

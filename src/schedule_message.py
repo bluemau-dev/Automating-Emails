@@ -1,6 +1,6 @@
 import time
 import calendar
-
+import os
 
 # Current Time
 curr = time.time()
@@ -31,6 +31,7 @@ def printCurrentTime():
     print(t.strftime(f"%b {day}, %Y %H:%M:%S"))
 
 printCurrentTime()
+print(os.environ["EMAIL_SECRET"])
 
 # Visualizing Printing time using Formatting
 def printAll():

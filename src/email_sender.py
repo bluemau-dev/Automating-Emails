@@ -1,4 +1,5 @@
 import smtplib
+import os
 
 # SMTP Server | Domain Name, Port Number
 smtpObj = smtplib.SMTP("smtp.gmail.com", 587)
@@ -9,16 +10,21 @@ smtpObj.ehlo()
 # Secures Ecrypted Data
 smtpObj.starttls()
 
-# Prompts User to enter credentials
-USERNAME = input("Enter Username: ")
-PASSWORD = input("Enter Password: ")
+# Uses GitHub Secret Key to Login for Security
+USERNAME = os.getenv("EMAIL_SECRET")
+PASSWORD = os.getenv("PASS_SECRET")
 
 # Recepient's Email Address
 RECIPIENT_EMAIL = USERNAME
 
 # Login to SMPT Server / With Authentication
-if(smtpObj.login(USERNAME, PASSWORD)):
-    print("LOGGED IN.")
+try:
+    smtpObj.login(USERNAME, PASSWORD)
+    print("Logged In.")
+
+except smtplib.SMTPAuthenticationError:
+    print("Login failed. Check username/password.")
+    exit(1)
 
 # Write the Email Message
 mySubject = input("What is the subject? ")
