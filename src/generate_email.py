@@ -50,7 +50,9 @@ def sendEmail():
     {author}
     """)
 
-    smtpObj.sendmail(USERNAME, RECIPIENT_EMAIL, msg)
+    # Uses the SMTP Object to Send Email from the Formatted Message
+    smtpObj.send_message(msg)
+    print("Email Sent Successfully!")
 
     # Logout
     smtpObj.quit()
