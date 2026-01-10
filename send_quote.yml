@@ -1,0 +1,26 @@
+name: Send Daily Quote Email
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 12 * * *" # every day at 06:00 AM my time
+
+jobs:
+  send-email:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+        
+      - name: Run email script
+        env:
+          EMAIL_SECRET: ${{secrets.EMAIL_SECRET}}
+          PASS_SECRET: ${{secrets.PASS_SECRET}}
+        run: |
+          python main.py
