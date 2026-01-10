@@ -1,6 +1,7 @@
 import smtplib
 import os
 import time
+from email.message import EmailMessage
 from src.generate_quotes import load_quote
 
 def sendEmail():
@@ -34,20 +35,22 @@ def sendEmail():
 
     # Write the Email Message
     mySubject = "Have a great " + time.strftime("%A") + " Bluemau Developer!"
-    myMessage = quote
-    myName = author
+    
+    # Create Email Message
+    msg = EmailMessage()
+
+    msg['Subject'] = f"Have a great {time.strftime('%A')} Bluemau Developer!"
+    msg['From'] = f"Bluemau Quotes <{USERNAME}>"
+    msg['To'] = RECIPIENT_EMAIL
 
     # Format and Sends Email
-    myEmail = f"""\
-    From: {USERNAME}
-    To: {RECIPIENT_EMAIL}
-    Subject: {mySubject}
+    msg.set_content(f"""\
+    {quote}
 
-    {myMessage}\n
+    {author}
+    """)
 
-    {myName}
-    """
-    smtpObj.sendmail(USERNAME, RECIPIENT_EMAIL, myEmail)
+    smtpObj.sendmail(USERNAME, RECIPIENT_EMAIL, msg)
 
     # Logout
     smtpObj.quit()
