@@ -3,7 +3,7 @@ name: Send Daily Quote Email
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 12 * * *" # every day at 06:00 AM my time
+    - cron: "0 12 * * *" # every day at 08:00 AM my time
 
 jobs:
   send-email:

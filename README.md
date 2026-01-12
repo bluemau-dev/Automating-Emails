@@ -18,3 +18,5 @@ I'd like to be able to send myself emails periodically throughout the week, sort
 
 # Resources
 I've had problems with programming recently. Relying too much on AI, not understanding core concepts, and losing the ambition. That is why I am using resources like 'No Start Press Automating the Boring Stuff with Python by Al Sweigart', which will guide me on this journey. I will also be using online resources like Stack Overflow and Reddit Communities to find answers and understandings to questions that I need help on. ()()()()
+
+https://github.com/JamesFT/Database-Quotes-JSON Was a big help on providing a json file with quotes.
